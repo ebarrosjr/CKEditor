@@ -2,6 +2,7 @@
     "name": "ebarrosjr/ckeditor",
     "description": "CkEditor plugin for CakePHP 3.x with version selection",
     "type": "cakephp-plugin",
+    "license": "MIT",
     "require": {
         "php": ">=5.5.9",
         "cakephp/cakephp": ">=3.3.2"
