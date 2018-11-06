@@ -1,13 +1,14 @@
-# CKEditor plugin for CakePHP
+# CKEditor plugin for CakePHP 3.x with version select
 
 ## Installation
 
 You can install this plugin into your CakePHP application using [composer](http://getcomposer.org).
+This is a personal version of: https://github.com/CakeCoded/CkEditor with the possibility of choose the version and distribution.
 
 The recommended way to install composer packages is:
 
 ```
-composer require cakecoded/ckeditor
+composer require ebarrosjr/ckeditor
 ```
 
 Then in config/bootstrap.php add:
@@ -19,7 +20,12 @@ Plugin::load('CkEditor');
 In either src/Controller/AppController.php, or any controller where you want to use CKEditor, add:
 
 ```php
-public $helpers = ['CkEditor.Ck'];
+
+public $helpers = ['CkEditor.Ck' => [
+	'distribution' => 'full', // Default Option :: Others options => 'basic', 'standard'
+	'version' => 4.9.1 //Default option, others via CDN page
+]];
+
 ```
 
 Finally, in your template file, simply add this to call CKEditor:
