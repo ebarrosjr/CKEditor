@@ -23,7 +23,7 @@ class CkHelper extends Helper
      */
     public function __construct(View $view, $config = []) {
         parent::__construct($view, $config);
-        $this->_configs = $this->config();
+        $this->_configs = $this->getConfig();
     }
 
 
@@ -47,7 +47,7 @@ class CkHelper extends Helper
         $defaultOptions = ['type' => 'textarea', 'required' => false];
         $options = array_merge($defaultOptions, $options);
         $lines[] = $this->Form->error($input);
-        $lines[] = $this->Form->input($input, $options);
+        $lines[] = $this->Form->control($input, $options);
         $lines[] = $this->generateScript($input, $ckEditorOptions);
         return implode($lines, PHP_EOL);
     }
