@@ -23,7 +23,8 @@ In either src/Controller/AppController.php, or any controller where you want to 
 
 public $helpers = ['CkEditor.Ck' => [
 	'distribution' => 'full', // Default Option :: Others options => 'basic', 'standard'
-	'version' => 4.9.1 //Default option, others via CDN page
+	'version' => '4.11.4', //Default option, others via CDN page
+	'script' => null // You can now point to a custom ckeditor JS file
 ]];
 
 ```

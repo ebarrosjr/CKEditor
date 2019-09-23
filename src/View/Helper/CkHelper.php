@@ -11,8 +11,9 @@ class CkHelper extends Helper
      * @param distribution The layout of distro i.e.: Basic, Full, Standard
      */
     protected $_defaultConfig = [
-        'version' => '4.9.1',
-        'distribution' => 'full'
+        'version' => '4.11.4',
+        'distribution' => 'full',
+        'script' => null
       ];
     protected $_configs = [];
     /**
@@ -40,8 +41,10 @@ class CkHelper extends Helper
         /**
          * Included the config passed before
          */
-        if (!$ckEditorUrl) {
+        if ((!$ckEditorUrl) && ($this->_configs['script'] == null)) {
              $ckEditorUrl = "//cdn.ckeditor.com/{$this->_configs['version']}/{$this->_configs['distribution']}/ckeditor.js";
+        } elseif ((!$ckEditorUrl) && ($this->_configs['script'] != null)) {
+            $ckEditorUrl = $this->_configs['script'];
         }
         $lines[] = $this->Html->script($ckEditorUrl);
         $defaultOptions = ['type' => 'textarea', 'required' => false];
